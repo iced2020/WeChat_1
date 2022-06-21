@@ -28,7 +28,7 @@
 #pragma mark - UITableViewDataSource
 //设置每个分区的行数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return (unsigned long)self.data.count;
 }
 
 //具体数据
@@ -57,6 +57,12 @@
         _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];//初始化并设置分组显示（Groupd）/不分组(plain）
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.showsVerticalScrollIndicator = YES;//垂直方向的滚动条
+
+        //开启自动计算高度
+        //【重点】注意千万不要实现行高的代理方法，否则无效：heightForRowAt
+        _tableView.rowHeight = UITableViewAutomaticDimension;
+        _tableView.estimatedRowHeight = 44;
     }
     return _tableView;
 }

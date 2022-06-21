@@ -80,7 +80,9 @@
             alignToFont:[UIFont systemFontOfSize:20]
             alignment:YYTextVerticalAlignmentBottom
         ];
-        self.textAtt = [[NSMutableAttributedString alloc] initWithString:@"用户1动态"];
+        self.textAtt = [[NSMutableAttributedString alloc] initWithString:@"用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态2222"];
+        self.textAtt.yy_font = [UIFont systemFontOfSize:18];
+        self.textAtt.yy_color = [UIColor darkGrayColor];
         self.maintext = [NSMutableAttributedString new];
         [self.maintext appendAttributedString:self.nameAtt];
         [self.maintext appendAttributedString:self.textAtt];
@@ -185,10 +187,10 @@
     [self.contentView addSubview:self.userImageView];
 //    对用户头像布局
     [self.userImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView.mas_top).with.offset(15);
+        make.top.equalTo(self.contentView.mas_top).with.offset(10);
+        make.bottom.equalTo(self.userImageView.mas_top).offset(60);
         make.left.equalTo(self.contentView).with.offset(10);
-        make.right.equalTo(self.contentView.mas_left).with.offset(90);
-        make.bottom.equalTo(self.contentView).with.offset(-10);
+        make.right.equalTo(self.userImageView.mas_left).offset(60);
     }];
 
 //    2.1.用户动态（昵称）
@@ -198,8 +200,7 @@
     self.lab.frame = CGRectMake(Right, TopAndBottomMargin, SCREEN_WIDTH - Right - LeftAndRightMargin, 30);
        
 //    2.2.用户动态（正文）
-    self.textAtt.yy_font = [UIFont systemFontOfSize:20];
-    self.textAtt.yy_color = [UIColor darkGrayColor];
+
     
 ////    2.3.用户动态（图片）
 //    for (int i = 0; i < self.finds.imagesArray.count; i++) {
@@ -236,8 +237,8 @@
     
 //    设置YYText属性
     self.yyTextLab.numberOfLines = 0;  //设置多行
+    self.yyTextLab.preferredMaxLayoutWidth = SCREEN_WIDTH *0.8; //这个属性必须设置，多行才有效
     self.yyTextLab.textAlignment = NSTextAlignmentLeft;
-   
 //    对用户动态进行布局
     [self.contentView addSubview:self.yyTextLab];
     //动态约束
@@ -245,7 +246,7 @@
         make.top.equalTo(self.userImageView);
         make.left.equalTo(self.userImageView.mas_right).offset(10);
         make.right.equalTo(self.contentView).with.offset(-10);
-        make.bottom.equalTo(self.userImageView);
+        make.bottom.equalTo(self.contentView).with.offset(-15);
     }];
 }
 
