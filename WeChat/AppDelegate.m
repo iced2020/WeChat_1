@@ -40,7 +40,7 @@
     addressNav.navigationBar.translucent = YES;
     
     FindViewController *findVC = [[FindViewController alloc] init];
-    findVC.title = @"发现";
+    findVC.title = @"朋友圈";
     findVC.tabBarItem.title = @"发现";
     findVC.tabBarItem.image = [UIImage systemImageNamed:@"safari"];
     UINavigationController *findNav = [[UINavigationController alloc] initWithRootViewController:findVC];

@@ -92,10 +92,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //        cell从复用池里面获取
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mine"];
 //        无cell时创建
     if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"call"];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mine"];
         }
 //        设置指示图标
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -107,8 +107,8 @@
     cell.textLabel.text = list.title;
     cell.imageView.image = [UIImage imageNamed:list.image];
     if (indexPath.section == 2) {
-        //        设置指示图标
-            cell.accessoryType = NO;
+//        设置指示图标
+        cell.accessoryType = NO;
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
         cell.textLabel.textColor = [UIColor redColor];
         cell.textLabel.font = [UIFont boldSystemFontOfSize:18];
@@ -266,6 +266,7 @@
     self.userImageView.image = image;
     [self saveUserInfo];
 }
+
 #pragma mark - 保存用户名头像
 //登录成功后把密码保存到沙盒中（用户偏好设置）
 - (void)saveUserInfo{
@@ -283,6 +284,5 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSData *imageData = [userDefaults objectForKey:@"userImage"];
     self.userImageView.image = [UIImage imageWithData:imageData];
-
 }
 @end

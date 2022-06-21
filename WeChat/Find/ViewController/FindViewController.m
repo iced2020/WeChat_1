@@ -1,21 +1,21 @@
 //
-//  AddressViewController.m
+//  FindViewController.m
 //  WeChat_v1
 //
 //  Created by 潘申冰 on 2022/6/12.
 //
 
-#import "AddressViewController.h"
-#import "AddressModel.h"
-#import "AddressTableViewCell.h"
+#import "FindViewController.h"
+#import "FindModel.h"
+#import "FindTableViewCell.h"
+#import <Masonry.h>
 
-@interface AddressViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface FindViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy) NSDictionary *data;
-
 @end
 
-@implementation AddressViewController
+@implementation FindViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,27 +28,22 @@
 #pragma mark - UITableViewDataSource
 //设置每个分区的行数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return (unsigned long)self.data.count;
-}
-
-//设置一行高度
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60;
+    return 1;
 }
 
 //具体数据
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    static NSString *reusedId = @"address";
-    AddressTableViewCell *cell = (AddressTableViewCell *) [tableView dequeueReusableHeaderFooterViewWithIdentifier:reusedId];
+    static NSString *reusedId = @"finds";
+    FindTableViewCell *cell = (FindTableViewCell *) [tableView dequeueReusableHeaderFooterViewWithIdentifier:reusedId];
     if (!cell) {
-        cell = [[AddressTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reusedId];
+        cell = [[FindTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reusedId];
     }
     NSString *key = [NSString stringWithFormat:@"%ld",(long)indexPath.row] ;
     NSDictionary *tmpInfo = [self.data objectForKey:key];
-    AddressModel *model = [AddressModel provinceWithDictionary:tmpInfo];
+    FindModel *model = [FindModel provinceWithDictionary:tmpInfo];
 //   显示所有内容
-    cell.address = model;
+    cell.finds = model;
     return cell;
 }
 
@@ -56,7 +51,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];//抬起手指颜色改变回来
 }
-
 #pragma mark - lan加载
 - (UITableView *) tableView{
     if (!_tableView) {
@@ -66,6 +60,5 @@
     }
     return _tableView;
 }
-
 
 @end

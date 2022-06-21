@@ -53,6 +53,11 @@
     return cell;
 }
 
+//点击时
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];//抬起手指颜色改变回来
+}
+
 #pragma mark - lan加载
 - (UITableView *) tableView{
     if (!_tableView) {

@@ -27,10 +27,10 @@
     if (self) {
         //设置图片
         self.imgView = [[UIImageView alloc] initWithFrame:CGRectZero];
-//        self.imgView.backgroundColor = [UIColor systemBlueColor];
-        self.imgView.contentMode=UIViewContentModeScaleAspectFill;
-        self.imgView.clipsToBounds=YES;
-        //contentView是cell自带的view，
+        //头像图片宽高适配
+        self.imgView.contentMode = UIViewContentModeScaleAspectFill;
+        self.imgView.clipsToBounds = YES;
+        //contentView是cell自带的view
         [self.contentView addSubview:self.imgView];
         //设置标题
         self.nameLable = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -58,10 +58,6 @@
     //调用父类的方法
     [super layoutSubviews];
     self.imgView.frame = CGRectMake(10, 10, 60, 60);
-
-//    [_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self.window);
-//    }];
  
     [_nameLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.imgView.mas_right).offset(20);

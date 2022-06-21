@@ -26,7 +26,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.imgView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        self.imgView.backgroundColor = [UIColor systemBlueColor];
+        //头像图片宽高适配
+        self.imgView.contentMode = UIViewContentModeScaleAspectFill;
+        self.imgView.clipsToBounds = YES;
         //contentView是cell自带的view
         [self.contentView addSubview:self.imgView];
         
@@ -43,13 +45,8 @@
 - (void)layoutSubviews {
     //调用父类的方法
     [super layoutSubviews];
-//    self.nameLable.frame = CGRectMake(200, 20, 100, 100);
     self.imgView.frame = CGRectMake(10, 10, 40, 40);
-    
-//    [_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self.window);
-//    }];
- 
+
     [_nameLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.imgView.mas_right).offset(20);
         make.top.equalTo(self.imgView).offset(10);
