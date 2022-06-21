@@ -1,0 +1,26 @@
+//
+//  PrefixHeader.pch
+//  WeChat_v1
+//
+//  Created by 潘申冰 on 2022/6/12.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+//宏定义 屏幕大小
+#define SCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
+
+//点赞时自己的名字
+#define LikeName @"Vermouth"
+
+//MomentsCell里面的位置
+#define Right 80
+#define TopAndBottomMargin 20
+#define LeftAndRightMargin 14
+
+
+
+#endif /* PrefixHeader_pch */

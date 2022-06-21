@@ -9,10 +9,6 @@
 #import "ChatTableViewCell.h"
 #import "PersonModel.h"
 
-//宏定义 屏幕大小
-#define SCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
-
 @interface BaseViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy) NSDictionary *data;
