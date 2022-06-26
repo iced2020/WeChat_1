@@ -24,6 +24,7 @@
 		B03CA21A2860DF4000DE1E6E /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03CA2032860DF4000DE1E6E /* MineViewController.m */; };
 		B03CA21B2860DF4000DE1E6E /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03CA2082860DF4000DE1E6E /* FindViewController.m */; };
 		B03CA21C2860DF4000DE1E6E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03CA20B2860DF4000DE1E6E /* LoginViewController.m */; };
+		B056785328684639005F128C /* FindImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B056785228684639005F128C /* FindImage.xcassets */; };
 		B058895E286164040061381A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B058895C286164040061381A /* AppDelegate.m */; };
 		B0588962286164180061381A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B058895F286164180061381A /* Main.storyboard */; };
 		B0588963286164180061381A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0588960286164180061381A /* LaunchScreen.storyboard */; };
@@ -66,6 +67,7 @@
 		B03CA2082860DF4000DE1E6E /* FindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindViewController.m; sourceTree = "<group>"; };
 		B03CA20B2860DF4000DE1E6E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B03CA20C2860DF4000DE1E6E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B056785228684639005F128C /* FindImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FindImage.xcassets; sourceTree = "<group>"; };
 		B0588959286164040061381A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B058895C286164040061381A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B058895F286164180061381A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -129,8 +131,8 @@
 		B03CA1E32860DF4000DE1E6E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B03CA1E42860DF4000DE1E6E /* PersonModel.m */,
 				B03CA1E52860DF4000DE1E6E /* PersonModel.h */,
+				B03CA1E42860DF4000DE1E6E /* PersonModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,6 +231,7 @@
 				B03CA2062860DF4000DE1E6E /* Model */,
 				B03CA2072860DF4000DE1E6E /* View */,
 				B03CA2092860DF4000DE1E6E /* ViewController */,
+				B056785228684639005F128C /* FindImage.xcassets */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				B03CA2172860DF4000DE1E6E /* MineImage.xcassets in Resources */,
 				B03CA2112860DF4000DE1E6E /* BaseImage.xcassets in Resources */,
 				B0588964286164180061381A /* Assets.xcassets in Resources */,
+				B056785328684639005F128C /* FindImage.xcassets in Resources */,
 				B52A261F28420D2500607363 /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

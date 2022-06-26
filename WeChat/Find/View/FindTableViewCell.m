@@ -13,11 +13,11 @@
 //头像框
 @property (nonatomic, strong) UIImageView *userImageView;
 
-///自己发的朋友圈的删除按钮
+//自己发的朋友圈的删除按钮
 @property (nonatomic, strong) UIButton *deleteBtn;
 
 //评论或点赞的按钮(多功能按钮)
-@property (nonatomic, strong) UIButton *likeOrCommentBtn;
+@property (nonatomic, strong) UIButton *commentBtn;
 
 //第一个YYLabel：动态信息
 @property (nonatomic, strong) YYLabel *yyTextLab;
@@ -25,13 +25,11 @@
 @property (nonatomic, strong) NSMutableAttributedString *nameAtt;
 @property (nonatomic, strong) NSMutableAttributedString *textAtt;
 @property (nonatomic, strong) NSMutableAttributedString *maintext;
-//第二个YYLabel：点赞信息
-@property (nonatomic, strong) YYLabel *yylikesLab;
 
 //分割线
 @property (nonatomic, strong) UIView *separator;
 
-//第三个YYLabel：评论信息
+//第二个YYLabel：评论信息
 @property (nonatomic, strong) YYLabel *yyCommentsLab;
 
 //点赞情况
@@ -76,7 +74,7 @@
         self.nameAtt = [NSMutableAttributedString
             yy_attachmentStringWithContent:self.lab
             contentMode:UIViewContentModeLeft
-            attachmentSize:CGSizeMake(SCREEN_WIDTH - Right - LeftAndRightMargin, 30)  //图片占位符
+            attachmentSize:CGSizeMake(SCREEN_WIDTH - 80 - 15, 30)  //图片占位符
             alignToFont:[UIFont systemFontOfSize:20]
             alignment:YYTextVerticalAlignmentBottom
         ];
@@ -96,32 +94,17 @@
 - (void)setupUI{
     self.yyTextLab = [[YYLabel alloc] init];
     [self mainBody];
-//    //标题 【重点】必须在创建第一块控件的时候约束：contentView
-//    UILabel * labeltitle = [[UILabel alloc]init];
-//    labeltitle.backgroundColor = [UIColor whiteColor];
-//    self.labeltitle = labeltitle;
-//    labeltitle.text = @"标题";
-//    labeltitle.textAlignment = NSTextAlignmentLeft;
-//    labeltitle.numberOfLines = 0;
-//    [self.contentView addSubview:labeltitle];
-//
-//    unsigned long likesNumbers = self.likesTextArray.count;
+
 //    unsigned long commentsNumbers = self.commentsTextArray.count;
-//    //1.没有点赞也没有评论
-//    if (likesNumbers == 0 && commentsNumbers == 0) {
-//        [self noLikeNoCom];
+//    //1.没有评论
+//    if (commentsNumbers == 0) {
+//        [self noCom];
 //    }
-//    //2.有点赞没评论
+//    //2.有评论
 //    if (likesNumbers != 0 && commentsNumbers == 0) {
-//        [self likeNoCom];
+//        [self yesCom];
 //    }
-//    //3.有评论没有点赞
-//    if (likesNumbers == 0 && commentsNumbers != 0) {
-//        [self noLikeButCom];
-//    }
-//    //3.有点赞有评论(有分割线）
-//    if (likesNumbers != 0 && commentsNumbers != 0) {
-//        [self likeAndCom];
+
 //    }
 //
 //
@@ -197,7 +180,7 @@
     self.lab = [[UILabel alloc] init];
     self.lab.font = [UIFont boldSystemFontOfSize:20];
     self.lab.textColor = [UIColor blackColor];
-    self.lab.frame = CGRectMake(Right, TopAndBottomMargin, SCREEN_WIDTH - Right - LeftAndRightMargin, 30);
+    self.lab.frame = CGRectMake(80, 20, SCREEN_WIDTH - 80 - 15, 30);
        
 //    2.2.用户动态（正文）
 
@@ -235,6 +218,15 @@
 //        }
 //    }
     
+//    4.评论按钮
+    //评论或点赞的按钮(多功能按钮)
+    self.commentBtn = [[UIButton alloc] init];
+    [self.commentBtn setBackgroundImage:[UIImage imageNamed:@"comment"] forState:UIControlStateNormal];
+    self.commentBtn.layer.masksToBounds = YES;
+    self.commentBtn.layer.cornerRadius = 5;
+    [self.commentBtn addTarget:self action:@selector(Comment) forControlEvents:UIControlEventTouchUpInside];//还没写
+    [self.yyTextLab addSubview:self.commentBtn];
+    
 //    设置YYText属性
     self.yyTextLab.numberOfLines = 0;  //设置多行
     self.yyTextLab.preferredMaxLayoutWidth = SCREEN_WIDTH *0.8; //这个属性必须设置，多行才有效
@@ -246,25 +238,23 @@
         make.top.equalTo(self.userImageView);
         make.left.equalTo(self.userImageView.mas_right).offset(10);
         make.right.equalTo(self.contentView).with.offset(-10);
-        make.bottom.equalTo(self.contentView).with.offset(-15);
+        make.bottom.equalTo(self.contentView).with.offset(-25);
+    }];
+    
+    [self.commentBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.yyTextLab).offset(-5);
+        make.bottom.equalTo(self.contentView).offset(-5);
+        make.size.mas_equalTo(CGSizeMake(35, 25));
     }];
 }
 
 
 #pragma mark - 不同情况不同布局
-- (void)noLikeNoCom{
+- (void)noCom{
     
 }
 
-- (void)likeNoCom{
-    
-}
-
-- (void)noLikeButCom{
-    
-}
-
-- (void)likeAndCom{
+- (void)yesCom{
     
 }
 
