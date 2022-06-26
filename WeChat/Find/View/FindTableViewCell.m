@@ -16,28 +16,28 @@
 ///自己发的朋友圈的删除按钮
 @property (nonatomic, strong) UIButton *deleteBtn;
 
-///评论或点赞的按钮(多功能按钮)
+//评论或点赞的按钮(多功能按钮)
 @property (nonatomic, strong) UIButton *likeOrCommentBtn;
 
-///第一个YYLabel：动态信息
+//第一个YYLabel：动态信息
 @property (nonatomic, strong) YYLabel *yyTextLab;
 @property (nonatomic, strong) UILabel *lab;
 @property (nonatomic, strong) NSMutableAttributedString *nameAtt;
 @property (nonatomic, strong) NSMutableAttributedString *textAtt;
 @property (nonatomic, strong) NSMutableAttributedString *maintext;
-///第二个YYLabel：点赞信息
+//第二个YYLabel：点赞信息
 @property (nonatomic, strong) YYLabel *yylikesLab;
 
-///分割线
+//分割线
 @property (nonatomic, strong) UIView *separator;
 
-///第三个YYLabel：评论信息
+//第三个YYLabel：评论信息
 @property (nonatomic, strong) YYLabel *yyCommentsLab;
 
-///点赞情况
+//点赞情况
 @property (nonatomic, strong) NSMutableArray <NSString *> *likesTextArray;
 
-///评论情况
+//评论情况
 @property (nonatomic, strong) NSMutableArray <NSString *> *commentsTextArray;
 
 @end

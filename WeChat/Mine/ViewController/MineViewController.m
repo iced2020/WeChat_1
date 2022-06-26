@@ -268,7 +268,7 @@
 }
 
 #pragma mark - 保存用户名头像
-//登录成功后把密码保存到沙盒中（用户偏好设置）
+//成功后把头像保存到沙盒中（用户偏好设置）
 - (void)saveUserInfo{
     //NSUserDefaults特殊的初始化
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];

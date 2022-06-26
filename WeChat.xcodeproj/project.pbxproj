@@ -205,10 +205,10 @@
 		B03CA1FB2860DF4000DE1E6E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B03CA1FC2860DF4000DE1E6E /* ListGroupModel.h */,
 				B03CA1FD2860DF4000DE1E6E /* ListModel.h */,
-				B03CA1FE2860DF4000DE1E6E /* ListGroupModel.m */,
 				B03CA1FF2860DF4000DE1E6E /* ListModel.m */,
+				B03CA1FC2860DF4000DE1E6E /* ListGroupModel.h */,
+				B03CA1FE2860DF4000DE1E6E /* ListGroupModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,8 +263,8 @@
 		B03CA20A2860DF4000DE1E6E /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				B03CA20B2860DF4000DE1E6E /* LoginViewController.m */,
 				B03CA20C2860DF4000DE1E6E /* LoginViewController.h */,
+				B03CA20B2860DF4000DE1E6E /* LoginViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";

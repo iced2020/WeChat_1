@@ -144,7 +144,7 @@
         //给控件加圆角
         _resetButton.layer.cornerRadius = 25;
         [_resetButton addTarget:self action:@selector(reset) forControlEvents:UIControlEventTouchUpInside];
-        [_resetButton setTitle:@"清空账号" forState:UIControlStateNormal];
+        [_resetButton setTitle:@"清空账号所有数据" forState:UIControlStateNormal];
         [_resetButton setTitle:@"清空中..." forState:UIControlStateHighlighted];
         _resetButton.backgroundColor = [UIColor blueColor];
     }
