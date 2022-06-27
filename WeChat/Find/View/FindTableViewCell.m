@@ -16,7 +16,7 @@
 //自己发的朋友圈的删除按钮
 @property (nonatomic, strong) UIButton *deleteBtn;
 
-//评论或点赞的按钮(多功能按钮)
+//评论按钮
 @property (nonatomic, strong) UIButton *commentBtn;
 
 //第一个YYLabel：动态信息
@@ -31,9 +31,6 @@
 
 //第二个YYLabel：评论信息
 @property (nonatomic, strong) YYLabel *yyCommentsLab;
-
-//点赞情况
-@property (nonatomic, strong) NSMutableArray <NSString *> *likesTextArray;
 
 //评论情况
 @property (nonatomic, strong) NSMutableArray <NSString *> *commentsTextArray;
@@ -78,72 +75,34 @@
             alignToFont:[UIFont systemFontOfSize:20]
             alignment:YYTextVerticalAlignmentBottom
         ];
-        self.textAtt = [[NSMutableAttributedString alloc] initWithString:@"用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态2222"];
+        
+        self.textAtt = [[NSMutableAttributedString alloc] initWithString:@"用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态2222\n"];
         self.textAtt.yy_font = [UIFont systemFontOfSize:18];
         self.textAtt.yy_color = [UIColor darkGrayColor];
         self.maintext = [NSMutableAttributedString new];
         [self.maintext appendAttributedString:self.nameAtt];
         [self.maintext appendAttributedString:self.textAtt];
+        
+        self.finds.imagesArray = @[@"A"];
+        [self setupImg];//添加图片
+        
         self.yyTextLab.attributedText = self.maintext;
         }
 }
     //注意：这里不能写成 self.tLable = tLable;
     //因为这样会无限的调用自己，叫做递归；
 
-//布局UI
+#pragma mark - 布局UI
 - (void)setupUI{
     self.yyTextLab = [[YYLabel alloc] init];
     [self mainBody];
 
-//    unsigned long commentsNumbers = self.commentsTextArray.count;
-//    //1.没有评论
-//    if (commentsNumbers == 0) {
-//        [self noCom];
-//    }
-//    //2.有评论
-//    if (likesNumbers != 0 && commentsNumbers == 0) {
-//        [self yesCom];
-//    }
+    //有评论
+    if (self.commentsTextArray.count != 0) {
+        [self yesCom];
+    }
 
-//    }
-//
-//
-//    //大图
-//    UIImageView *pictureView = [[UIImageView alloc]init];
-//    self.pictureView = pictureView;
-//    pictureView.image = [UIImage imageNamed:@"A"];
-//    pictureView.contentMode = UIViewContentModeScaleAspectFill;
-//    pictureView.clipsToBounds = YES;
-//    [self.contentView addSubview:pictureView];
-//
-    //内容
-//    UILabel * labelContont = [[UILabel alloc]init];
-//    labelContont.backgroundColor = [UIColor whiteColor];
-//    self.labelContont = labelContont;
-//    labelContont.text = @"内容";
-//    labelContont.textAlignment = NSTextAlignmentLeft;
-//    labelContont.numberOfLines = 0;
-//    labelContont.userInteractionEnabled = YES;
-//    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Actionbutton)];
-//    [labelContont addGestureRecognizer:tap];
-//    [self.contentView addSubview:labelContont];
-//
-//    //标题约束
-//    [labeltitle mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.contentView.mas_top).with.offset(15);
-//        make.left.equalTo(self.contentView).with.offset(10);
-//        make.right.equalTo(self.contentView).with.offset(-10);
-//    }];
-//
-//    [self setImgPosition];
-//
-    //设置内容约束  //内容 【重点】必须在创建最后一块控件的时候约束：contentView
-//    [labelContont mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.yyTextLab.mas_bottom).with.offset(20);
-//        make.left.mas_equalTo(10);
-//        make.right.mas_equalTo(-10);
-//        make.bottom.equalTo(self.contentView).with.offset(-10);
-//    }];
+
 }
 
 //点击事件
@@ -151,19 +110,8 @@
     NSLog(@"点击了内容");
 }
 
-//对图片位置单独设置布局
-- (void)setImgPosition {
-    //图片约束
-//    [self.pictureView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.labeltitle.mas_bottom).with.offset(20);
-//        make.left.mas_equalTo(10);
-//        make.right.mas_equalTo(-10);
-////        make.height.mas_equalTo(200);
-//    }];
-}
-
-
-#pragma mark - 不同情况相同布局
+#pragma mark - 布局UI子方法
+//主体布局
 - (void)mainBody{
 //    1.用户头像【重点】必须在创建第一块控件的时候约束：contentView
     self.userImageView = [[UIImageView alloc]init];
@@ -171,52 +119,22 @@
 //    对用户头像布局
     [self.userImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView.mas_top).with.offset(10);
-        make.bottom.equalTo(self.userImageView.mas_top).offset(60);
+        make.bottom.equalTo(self.userImageView.mas_top).offset(50);
         make.left.equalTo(self.contentView).with.offset(10);
-        make.right.equalTo(self.userImageView.mas_left).offset(60);
+        make.right.equalTo(self.userImageView.mas_left).offset(50);
     }];
 
 //    2.1.用户动态（昵称）
     self.lab = [[UILabel alloc] init];
     self.lab.font = [UIFont boldSystemFontOfSize:20];
     self.lab.textColor = [UIColor blackColor];
-    self.lab.frame = CGRectMake(80, 20, SCREEN_WIDTH - 80 - 15, 30);
+    self.lab.frame = CGRectMake(80, 20, 200, 30);
        
 //    2.2.用户动态（正文）
-
     
-////    2.3.用户动态（图片）
-//    for (int i = 0; i < self.finds.imagesArray.count; i++) {
-//        UIImageView *imageView = [self getImageView:i];
-//        if (self.finds.imagesArray.count == 1) {
-//            imageView.frame = [self oneImageFit:imageView];
-//        }else {
-//            //九宫格最大宽高 35:多功能按钮的宽，5:多功能按钮右间距 10:图片间隔总和
-//            CGFloat maxSize = (SCREEN_WIDTH - Right - LeftAndRightMargin - 35 - 5 - 10) / 3;
-//            imageView.frame = CGRectMake(0, 0, maxSize, maxSize);
-//        }
-//
-//        //图片宽高适配
-//        imageView.clipsToBounds = YES;
-//        [imageView setContentMode:UIViewContentModeScaleAspectFill];
-//
-//        NSMutableAttributedString *imageAtt = [[NSMutableAttributedString alloc] init];
-//        //正常情况，一张图片的占位符应该是该图片本身的size
-//        imageAtt =
-//        [NSMutableAttributedString
-//            yy_attachmentStringWithContent:imageView
-//            contentMode:UIViewContentModeLeft
-//            attachmentSize:CGSizeMake(imageView.frame.size.width + 5, imageView.frame.size.height + 5) //图片占位符
-//            alignToFont:[UIFont systemFontOfSize:20]
-//            alignment:YYTextVerticalAlignmentBottom];
-//        [maintext appendAttributedString:imageAtt];
-//        //最后一张时需要回车换行
-//        if (i == self.finds.imagesArray.count - 1) {
-//            NSMutableAttributedString *textAtt = [[NSMutableAttributedString alloc] initWithString:@"\n\n"];
-//            textAtt.yy_font = [UIFont systemFontOfSize:20];
-//            [maintext appendAttributedString:textAtt];
-//        }
-//    }
+    
+//    2.3.用户动态（图片）
+//    由于图片数量此时不能确定，赋值后再添加
     
 //    4.评论按钮
     //评论或点赞的按钮(多功能按钮)
@@ -249,15 +167,40 @@
 }
 
 
-#pragma mark - 不同情况不同布局
-- (void)noCom{
-    
-}
-
+//有评论时
 - (void)yesCom{
     
 }
 
+#pragma mark - 设置图片
+- (void)setupImg{
+    
+        for (int i = 0; i < self.finds.imagesArray.count; i++) {
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.finds.imagesArray[i]]];
+
+            imageView.frame = CGRectMake(0, 0, SCREEN_WIDTH/4.5, SCREEN_WIDTH/4.5);
+    
+            //图片拉伸
+            imageView.clipsToBounds = YES;
+            [imageView setContentMode:UIViewContentModeScaleAspectFill];
+
+            NSMutableAttributedString *imageAtt = [[NSMutableAttributedString alloc] init];
+
+            imageAtt = [NSMutableAttributedString
+                yy_attachmentStringWithContent:imageView
+                contentMode:UIViewContentModeScaleAspectFill
+                attachmentSize:imageView.frame.size
+                alignToFont:[UIFont systemFontOfSize:20]
+                alignment:YYTextVerticalAlignmentBottom];
+            [self.maintext appendAttributedString:imageAtt];
+//            每3张图片换行
+            if (i == 2||i == 5||i == self.finds.imagesArray.count - 1) {
+                NSMutableAttributedString *textAtt = [[NSMutableAttributedString alloc] initWithString:@"\n"];
+                textAtt.yy_font = [UIFont systemFontOfSize:20];
+                [self.maintext appendAttributedString:textAtt];
+            }
+        }
+}
 
 @end
 

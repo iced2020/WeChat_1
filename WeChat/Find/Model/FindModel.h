@@ -21,9 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 //图片数组
 @property (nonatomic, strong) NSArray *imagesArray;
 
-///点赞情况
-@property (nonatomic, strong) NSMutableArray <NSString *> *likesTextArray;
-
 ///评论情况
 @property (nonatomic, strong) NSMutableArray <NSString *> *commentsTextArray;
 
