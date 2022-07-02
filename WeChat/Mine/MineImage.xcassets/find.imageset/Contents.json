@@ -15,7 +15,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "p2.png",
+      "filename" : "find.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -26,7 +26,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Screen Shot 2022-06-05 at 11.21.19 AM.png",
+      "filename" : "findDark.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

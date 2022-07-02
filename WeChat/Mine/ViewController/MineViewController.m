@@ -15,10 +15,6 @@
 // 系统相册
 #import <AssetsLibrary/AssetsLibrary.h>
 
-//宏定义 屏幕大小
-#define SCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
-
 @interface MineViewController ()<
     UITableViewDataSource,
     UITableViewDelegate,
@@ -190,7 +186,7 @@
 #pragma mark - 退出登录
 - (void)exit{
     LoginViewController *loginVC = [[LoginViewController alloc] init];
-    loginVC.modalPresentationStyle = 0;
+    loginVC.modalPresentationStyle = UIModalPresentationFullScreen;//全屏显示（=0也可以）
     loginVC.Logined = NO;
     [self presentViewController:loginVC animated:YES completion:Nil];
 }

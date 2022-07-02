@@ -15,7 +15,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "p0.png",
+      "filename" : "service.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -26,7 +26,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Screen Shot 2022-06-05 at 11.21.05 AM.png",
+      "filename" : "serviceDark.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

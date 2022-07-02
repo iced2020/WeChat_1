@@ -10,10 +10,6 @@
 #import "BaseViewController.h"
 #import "Masonry.h"
 
-//宏定义 屏幕大小
-#define SCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
-
 @interface LoginViewController ()
 @property (nonatomic, strong)UILabel *loginLabel;
 @property (nonatomic, strong)UILabel *welcomeLabel;

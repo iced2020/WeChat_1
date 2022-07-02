@@ -28,11 +28,9 @@
 		B058895E286164040061381A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B058895C286164040061381A /* AppDelegate.m */; };
 		B0588962286164180061381A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B058895F286164180061381A /* Main.storyboard */; };
 		B0588963286164180061381A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0588960286164180061381A /* LaunchScreen.storyboard */; };
-		B0588964286164180061381A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0588961286164180061381A /* Assets.xcassets */; };
-		B0CB43C72861689300536402 /* FindData.mm in Sources */ = {isa = PBXBuildFile; fileRef = B0CB43C62861689300536402 /* FindData.mm */; };
 		B0CB43D128616FC600536402 /* FindModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CB43D028616FC600536402 /* FindModel.m */; };
 		B0CB43D428616FFB00536402 /* FindTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CB43D328616FFB00536402 /* FindTableViewCell.m */; };
-		B52A261F28420D2500607363 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52A261E28420D2500607363 /* Color.xcassets */; };
+		B52A261F28420D2500607363 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52A261E28420D2500607363 /* Assets.xcassets */; };
 		B52A262528420D2500607363 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B52A262428420D2500607363 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -72,17 +70,13 @@
 		B058895C286164040061381A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B058895F286164180061381A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B0588960286164180061381A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B0588961286164180061381A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0CB43C42861663A00536402 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		B0CB43C52861689300536402 /* FindData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindData.h; sourceTree = "<group>"; };
-		B0CB43C62861689300536402 /* FindData.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FindData.mm; sourceTree = "<group>"; };
-		B0CB43CB28616AE000536402 /* FindData+WCTTableCoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FindData+WCTTableCoding.h"; sourceTree = "<group>"; };
 		B0CB43CF28616FC600536402 /* FindModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindModel.h; sourceTree = "<group>"; };
 		B0CB43D028616FC600536402 /* FindModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindModel.m; sourceTree = "<group>"; };
 		B0CB43D228616FFB00536402 /* FindTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindTableViewCell.h; sourceTree = "<group>"; };
 		B0CB43D328616FFB00536402 /* FindTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindTableViewCell.m; sourceTree = "<group>"; };
 		B52A260F28420D2400607363 /* WeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B52A261E28420D2500607363 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		B52A261E28420D2500607363 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B52A262328420D2500607363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B52A262428420D2500607363 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,9 +191,9 @@
 		B03CA1F92860DF4000DE1E6E /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				B03CA1FA2860DF4000DE1E6E /* MineImage.xcassets */,
 				B03CA1FB2860DF4000DE1E6E /* Model */,
 				B03CA2012860DF4000DE1E6E /* ViewController */,
+				B03CA1FA2860DF4000DE1E6E /* MineImage.xcassets */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -227,7 +221,6 @@
 		B03CA2042860DF4000DE1E6E /* Find */ = {
 			isa = PBXGroup;
 			children = (
-				B0CB43CE28616C8800536402 /* Tool */,
 				B03CA2062860DF4000DE1E6E /* Model */,
 				B03CA2072860DF4000DE1E6E /* View */,
 				B03CA2092860DF4000DE1E6E /* ViewController */,
@@ -272,16 +265,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		B0CB43CE28616C8800536402 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				B0CB43C52861689300536402 /* FindData.h */,
-				B0CB43C62861689300536402 /* FindData.mm */,
-				B0CB43CB28616AE000536402 /* FindData+WCTTableCoding.h */,
-			);
-			path = Tool;
-			sourceTree = "<group>";
-		};
 		B52A260628420D2400607363 = {
 			isa = PBXGroup;
 			children = (
@@ -311,8 +294,7 @@
 				B03CA2042860DF4000DE1E6E /* Find */,
 				B03CA1F92860DF4000DE1E6E /* Mine */,
 				B03CA20A2860DF4000DE1E6E /* Login */,
-				B52A261E28420D2500607363 /* Color.xcassets */,
-				B0588961286164180061381A /* Assets.xcassets */,
+				B52A261E28420D2500607363 /* Assets.xcassets */,
 				B0588960286164180061381A /* LaunchScreen.storyboard */,
 				B058895F286164180061381A /* Main.storyboard */,
 				B52A262328420D2500607363 /* Info.plist */,
@@ -387,9 +369,8 @@
 				B03CA2122860DF4000DE1E6E /* AddressImage.xcassets in Resources */,
 				B03CA2172860DF4000DE1E6E /* MineImage.xcassets in Resources */,
 				B03CA2112860DF4000DE1E6E /* BaseImage.xcassets in Resources */,
-				B0588964286164180061381A /* Assets.xcassets in Resources */,
 				B056785328684639005F128C /* FindImage.xcassets in Resources */,
-				B52A261F28420D2500607363 /* Color.xcassets in Resources */,
+				B52A261F28420D2500607363 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +423,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0CB43C72861689300536402 /* FindData.mm in Sources */,
 				B0CB43D128616FC600536402 /* FindModel.m in Sources */,
 				B0CB43D428616FFB00536402 /* FindTableViewCell.m in Sources */,
 				B03CA20E2860DF4000DE1E6E /* PersonModel.m in Sources */,

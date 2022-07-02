@@ -21,11 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 //图片数组
 @property (nonatomic, strong) NSArray *imagesArray;
 
-///评论情况
+//评论情况
 @property (nonatomic, strong) NSMutableArray <NSString *> *commentsTextArray;
-
-///查看该cell的标号，用于判断是否为自己发布的朋友圈
-@property (nonatomic, assign) NSInteger index;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 + (instancetype)provinceWithDictionary:(NSDictionary *)dict;

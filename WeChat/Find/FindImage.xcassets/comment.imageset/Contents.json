@@ -15,7 +15,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "like&Comment.white.png",
+      "filename" : "com.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -26,7 +26,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Screen Shot 2022-06-04 at 12.36.34 AM.png",
+      "filename" : "comDark.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

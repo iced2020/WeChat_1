@@ -13,12 +13,6 @@
 //头像框
 @property (nonatomic, strong) UIImageView *userImageView;
 
-//自己发的朋友圈的删除按钮
-@property (nonatomic, strong) UIButton *deleteBtn;
-
-//评论按钮
-@property (nonatomic, strong) UIButton *commentBtn;
-
 //第一个YYLabel：动态信息
 @property (nonatomic, strong) YYLabel *yyTextLab;
 @property (nonatomic, strong) UILabel *lab;
@@ -26,13 +20,15 @@
 @property (nonatomic, strong) NSMutableAttributedString *textAtt;
 @property (nonatomic, strong) NSMutableAttributedString *maintext;
 
-//分割线
-@property (nonatomic, strong) UIView *separator;
+//评论按钮
+@property (nonatomic, strong) UIButton *commentBtn;
+//自己发的朋友圈的删除按钮
+@property (nonatomic, strong) UIButton *deleteBtn;
 
 //第二个YYLabel：评论信息
 @property (nonatomic, strong) YYLabel *yyCommentsLab;
 
-//评论情况
+//评论详情
 @property (nonatomic, strong) NSMutableArray <NSString *> *commentsTextArray;
 
 @end
@@ -76,14 +72,14 @@
             alignment:YYTextVerticalAlignmentBottom
         ];
         
-        self.textAtt = [[NSMutableAttributedString alloc] initWithString:@"用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态2222\n"];
+        self.textAtt = [[NSMutableAttributedString alloc] initWithString:@"用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态2222555555555555555555555555555555555555555555555555\n"];
         self.textAtt.yy_font = [UIFont systemFontOfSize:18];
         self.textAtt.yy_color = [UIColor darkGrayColor];
         self.maintext = [NSMutableAttributedString new];
         [self.maintext appendAttributedString:self.nameAtt];
         [self.maintext appendAttributedString:self.textAtt];
         
-        self.finds.imagesArray = @[@"A"];
+        self.finds.imagesArray = @[@"A",@"A",@"A",@"A"];
         [self setupImg];//添加图片
         
         self.yyTextLab.attributedText = self.maintext;
@@ -101,7 +97,6 @@
     if (self.commentsTextArray.count != 0) {
         [self yesCom];
     }
-
 
 }
 
