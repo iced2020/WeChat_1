@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *img;
 @property (nonatomic, copy) NSString *time;
 
+
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 + (instancetype)provinceWithDictionary:(NSDictionary *)dict;
 @end

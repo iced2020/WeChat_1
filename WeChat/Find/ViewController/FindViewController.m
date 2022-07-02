@@ -28,6 +28,7 @@ UIImagePickerControllerDelegate >
 -(void)viewWillAppear:(BOOL)animated
 {
     [self loadUserInfo];
+    
 }
    
 - (void)viewDidLoad {

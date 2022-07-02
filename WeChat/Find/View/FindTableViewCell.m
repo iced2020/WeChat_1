@@ -72,14 +72,14 @@
             alignment:YYTextVerticalAlignmentBottom
         ];
         
-        self.textAtt = [[NSMutableAttributedString alloc] initWithString:@"用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态用户1动态2222555555555555555555555555555555555555555555555555\n"];
+        self.textAtt = [[NSMutableAttributedString alloc] initWithString:@"用555555555555555555555555555555555555555555555\n"];
         self.textAtt.yy_font = [UIFont systemFontOfSize:18];
         self.textAtt.yy_color = [UIColor darkGrayColor];
         self.maintext = [NSMutableAttributedString new];
         [self.maintext appendAttributedString:self.nameAtt];
         [self.maintext appendAttributedString:self.textAtt];
         
-        self.finds.imagesArray = @[@"A",@"A",@"A",@"A"];
+        self.finds.imagesArray = @[@"A",@"A",@"A",@"A",@"A",@"A",@"A"];
         [self setupImg];//添加图片
         
         self.yyTextLab.attributedText = self.maintext;
@@ -164,6 +164,10 @@
 
 //有评论时
 - (void)yesCom{
+    
+}
+
+- (void)Comment{
     
 }
 

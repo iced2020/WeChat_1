@@ -37,6 +37,7 @@
         } else {
             self.automaticallyAdjustsScrollViewInsets = NO;
         }
+    [self loadUserInfo];
 }
 
 - (void)viewDidLoad {

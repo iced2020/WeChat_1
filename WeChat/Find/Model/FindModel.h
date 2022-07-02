@@ -11,6 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FindModel : NSObject
 
+@property (nonatomic, readonly, class) NSString *databasePath;
+
+@property (nonatomic, readonly, class) NSString *tableName;
+
 //昵称头像
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *img;
@@ -26,6 +30,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 + (instancetype)provinceWithDictionary:(NSDictionary *)dict;
+
+- (void)save;
++ (NSArray *)allObj;
+
 @end
 
 NS_ASSUME_NONNULL_END
