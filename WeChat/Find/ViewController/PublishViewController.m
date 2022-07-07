@@ -16,7 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self loadUserInfo];
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     //初始化数组
@@ -44,9 +44,7 @@
 }
 
 - (void)leftClick{
-    if (self.block) {
-        self.block(nil);
-    }
+    [self saveUserInfo];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -60,18 +58,14 @@
     
     if (self.textView.text.length || self.assets.count) {//内容存在或者图片存在
         if (self.block) {
-            
             FindModel *model = [[FindModel alloc]init];
             model.name = @"User";
-//            model.friendAvatar = [NSString stringWithFormat:@"icon%u.jpg",arc4random() % 4];
             model.text = self.textView.text;
-//            model.messageImageArr = self.assets;
-            
+         
             self.block(model);
         }
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-    
 }
 
 #pragma mark - 懒加载
@@ -115,6 +109,25 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - 保存用户名头像
+//把头视图保存到沙盒中（用户偏好设置）
+- (void)saveUserInfo{
+    //NSUserDefaults特殊的初始化
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    //NSImage需要先转成NSDada再储存
+    NSString *OutText = self.textView.text;
+    [userDefaults setObject:OutText forKey:@"OutText"];
+    //立即保存数据
+    [userDefaults synchronize];
+}
+//当重新加载应用，读取沙盒中的用户信息
+- (void)loadUserInfo{
+    //NSUserDefaults特殊的初始化
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *OutText = [userDefaults objectForKey:@"OutText"];
+    self.textView.text = OutText;
 }
 
 @end
