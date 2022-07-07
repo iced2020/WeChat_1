@@ -72,14 +72,14 @@
             alignment:YYTextVerticalAlignmentBottom
         ];
         
-        self.textAtt = [[NSMutableAttributedString alloc] initWithString:@"用555552222555555555555555555555\n"];
+        self.textAtt = [[NSMutableAttributedString alloc] initWithString:@"用55555222255555555555555555555555552222555555555555555555555555522225555555555555555555555555222255555555555555555555555552222555555555555555555555\n"];
         self.textAtt.yy_font = [UIFont systemFontOfSize:18];
         self.textAtt.yy_color = [UIColor darkGrayColor];
         self.maintext = [NSMutableAttributedString new];
         [self.maintext appendAttributedString:self.nameAtt];
         [self.maintext appendAttributedString:self.textAtt];
         
-        self.finds.imagesArray = @[@"A",@"A",@"A",@"A",@"A",@"A",@"A"];
+        self.finds.imagesArray = @[@"A",@"A",@"A",@"A"];
         [self setupImg];//添加图片
         
         self.yyTextLab.attributedText = self.maintext;
