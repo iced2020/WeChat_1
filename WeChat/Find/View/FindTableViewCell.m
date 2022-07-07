@@ -72,7 +72,7 @@
             alignment:YYTextVerticalAlignmentBottom
         ];
         
-        self.textAtt = [[NSMutableAttributedString alloc] initWithString:@"用555555555555555555555555555555555555555555555\n"];
+        self.textAtt = [[NSMutableAttributedString alloc] initWithString:@"用555552222555555555555555555555\n"];
         self.textAtt.yy_font = [UIFont systemFontOfSize:18];
         self.textAtt.yy_color = [UIColor darkGrayColor];
         self.maintext = [NSMutableAttributedString new];
@@ -97,7 +97,6 @@
     if (self.commentsTextArray.count != 0) {
         [self yesCom];
     }
-
 }
 
 //点击事件
@@ -126,7 +125,6 @@
     self.lab.frame = CGRectMake(80, 20, 200, 30);
        
 //    2.2.用户动态（正文）
-    
     
 //    2.3.用户动态（图片）
 //    由于图片数量此时不能确定，赋值后再添加

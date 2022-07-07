@@ -9,6 +9,7 @@
 #import "FindModel.h"
 #import "FindTableViewCell.h"
 #import <Masonry.h>
+#import "PublishViewController.h"
 
 @interface FindViewController ()<
 UITableViewDataSource,
@@ -28,6 +29,8 @@ UIImagePickerControllerDelegate >
 -(void)viewWillAppear:(BOOL)animated
 {
     [self loadUserInfo];
+    //配置导航栏
+    [self setupNav];
     
 }
    
@@ -40,6 +43,14 @@ UIImagePickerControllerDelegate >
     [self.view addSubview:self.tableView];
 }
 
+#pragma mark 配置导航栏
+- (void)setupNav{
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(rightClick)];
+    self.navigationItem.rightBarButtonItem = item;
+    
+}
+
 #pragma mark - UITableViewDataSource
 //设置每个分区的行数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -48,7 +59,6 @@ UIImagePickerControllerDelegate >
 
 //具体数据
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
     static NSString *reusedId = @"finds";
     FindTableViewCell *cell = (FindTableViewCell *) [tableView dequeueReusableHeaderFooterViewWithIdentifier:reusedId];
     if (!cell) {
@@ -198,6 +208,23 @@ UIImagePickerControllerDelegate >
     self.topImageView.image = image;
     [self saveUserInfo];
 }
+
+#pragma mark - 导航栏点击
+- (void)rightClick{
+    
+    PublishViewController *view = [[PublishViewController alloc]init];
+    view.block = ^(FindModel *message){
+        if (message) {
+
+            //进行刷新
+            [self.tableView reloadData];
+        }
+    };
+    
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:view];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
 
 #pragma mark - 保存用户名头像
 //把头视图保存到沙盒中（用户偏好设置）

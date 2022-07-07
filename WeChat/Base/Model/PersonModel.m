@@ -11,10 +11,6 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dict{
     if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dict];
-        NSLog(@"😀");
-        NSLog(@"😃");
-        NSLog(@"😄");
-        NSLog(@"😁");
     }
     return self;
 }
